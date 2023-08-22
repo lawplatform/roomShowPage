@@ -5,6 +5,7 @@ import Icon_label from "../components/Icon_label";
 import { useQuery } from "@tanstack/react-query";
 import { observer } from "@legendapp/state/react";
 import { State } from "../store/State"
+import Gallery_AB from "../components/Gallery_AB";
 interface ChoiceRoomProp {
 	platform: string;
 	next: () => void;
@@ -73,8 +74,7 @@ const ChoiceRoom = observer(function component({ platform, next, prev, change }:
 
 	}
 	return (
-		<div className="">
-			<h1 className='text-center leading-10 text-3xl font-bold'>공간 선택 </h1>
+		<div className="h-full">
 			<div className="form-control flex flex-row justify-center">
 				<Icon_label icon="home" name="모임" handleChange={handleCheckboxChange} checked={filterOptions.includes("home")} />
 				<Icon_label icon="edu" name="교육" handleChange={handleCheckboxChange} checked={filterOptions.includes("edu")} />
@@ -82,16 +82,16 @@ const ChoiceRoom = observer(function component({ platform, next, prev, change }:
 				<Icon_label icon="talk" name="상담" handleChange={handleCheckboxChange} checked={filterOptions.includes("talk")} />
 			</div>
 
-			<div className="mx-auto flex justify-center w-80 mt-3 mb-3">
+			<div className="mx-auto flex justify-center w-80 mt-3  mb-3">
 				<Searchbar search={search} setSearch={setSearch} />
 
 			</div>
-			<div className="h-[600px] overflow-y-scroll">
+			<div className="h-[1080px] overflow-y-scroll ">
 				<div className="  flex items-center justify-center ">
-					<div className="grid grid-cols-2 md:grid-cols-3 grid-flow-row gap-4 mt-5 px-1">
+					<div className="grid grid-cols-4 md:grid-cols-5 grid-flow-row gap-2 mt-5 px-1">
 						{filteredData.map((item: any, index: number) => (
 							<div className="w-40 h-30 sm:h-50">
-								<Gallery_Button name={item.name} key={index} img={imagePath + item.imgName + '.png'} show={showModal} />
+								<Gallery_AB name={item.name} key={index} img={imagePath + item.imgName + '.png'} show={showModal} />
 							</div>
 						))}
 					</div>
