@@ -74,21 +74,21 @@ const ChoiceRoom = observer(function component({ platform, next, prev, change }:
 
 	}
 	return (
-		<div className="h-full">
-			<div className="form-control flex flex-row justify-center">
+		<div className="h-full ">
+			<div className="form-control flex flex-row justify-center h-full ">
 				<Icon_label icon="home" name="모임" handleChange={handleCheckboxChange} checked={filterOptions.includes("home")} />
 				<Icon_label icon="edu" name="교육" handleChange={handleCheckboxChange} checked={filterOptions.includes("edu")} />
 				<Icon_label icon="sns" name="홍보" handleChange={handleCheckboxChange} checked={filterOptions.includes("sns")} />
 				<Icon_label icon="talk" name="상담" handleChange={handleCheckboxChange} checked={filterOptions.includes("talk")} />
 			</div>
 
-			<div className="mx-auto flex justify-center w-80 mt-3  mb-3">
+			<div className="mx-auto flex justify-center w-80 mt-3  mb-3 h-full">
 				<Searchbar search={search} setSearch={setSearch} />
 
 			</div>
-			<div className="h-[1080px] overflow-y-scroll ">
+			<div className="h-[900px] overflow-y-scroll ">
 				<div className="  flex items-center justify-center ">
-					<div className="grid grid-cols-4 md:grid-cols-5 grid-flow-row gap-2 mt-5 px-1">
+					<div className="grid grid-cols-2 md:grid-cols-5 grid-flow-row gap-2 mt-5 px-1">
 						{filteredData.map((item: any, index: number) => (
 							<div className="w-40 h-30 sm:h-50">
 								<Gallery_AB name={item.name} key={index} img={imagePath + item.imgName + '.png'} show={showModal} />
@@ -113,9 +113,6 @@ const ChoiceRoom = observer(function component({ platform, next, prev, change }:
 							{State.Link.get() !== "null" ?
 								<p> 다양한 공간들을 둘러보세요</p> : <p></p>}
 							<div className="relative ">
-								<button className="btn btn-neutral" onClick={cilckHandler} >
-									선택
-								</button>
 							</div>
 						</div>
 					</div>
