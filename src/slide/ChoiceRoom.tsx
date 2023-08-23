@@ -75,12 +75,7 @@ const ChoiceRoom = observer(function component({ platform, next, prev, change }:
 	}
 	return (
 		<div className="h-full ">
-			<div className="form-control flex flex-row justify-center h-full ">
-				<Icon_label icon="home" name="모임" handleChange={handleCheckboxChange} checked={filterOptions.includes("home")} />
-				<Icon_label icon="edu" name="교육" handleChange={handleCheckboxChange} checked={filterOptions.includes("edu")} />
-				<Icon_label icon="sns" name="홍보" handleChange={handleCheckboxChange} checked={filterOptions.includes("sns")} />
-				<Icon_label icon="talk" name="상담" handleChange={handleCheckboxChange} checked={filterOptions.includes("talk")} />
-			</div>
+
 
 			<div className="mx-auto flex justify-center w-80 mt-3  mb-3 h-full">
 				<Searchbar search={search} setSearch={setSearch} />
@@ -110,8 +105,6 @@ const ChoiceRoom = observer(function component({ platform, next, prev, change }:
 					) : (<p>전문가와 상담하여 멋진 공간을 만들어보세요</p>)}
 					<div className="flex flex-row justify-between">
 						<div>
-							{State.Link.get() !== "null" ?
-								<p> 다양한 공간들을 둘러보세요</p> : <p></p>}
 							<div className="relative ">
 							</div>
 						</div>
